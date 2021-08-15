@@ -1,4 +1,4 @@
-#Bubble Sort-Optimized.
+#Bubble Sort-Optimized Version of bubble_sort.py.
 #Compare adjacent and swap adjacent if L[i+1]<L[i] and move forward till the last element.Finally largest would be moved to the end, Repeat.
 L=[10,8,20,5,22,3]
 for j in range(0,len(L)-1):
