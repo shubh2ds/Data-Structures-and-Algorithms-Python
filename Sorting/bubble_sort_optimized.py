@@ -1,4 +1,4 @@
-#Bubble Sort
+#Bubble Sort -optimized.
 #Compare adjacent and swap adjacent if L[i+1]<L[i] and move forward till the last element.Finally largest would be moved to the end, Repeat.
 
 def bubble_sort(L):
