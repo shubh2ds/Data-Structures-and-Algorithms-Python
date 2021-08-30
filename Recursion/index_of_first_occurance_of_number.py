@@ -1,3 +1,4 @@
+#Space consumption is huge bcoz we are copying list in each recursion call.i will optimize it later using index way.
 def firstIndex(arr, x, n):
     # Please add your code here
     
