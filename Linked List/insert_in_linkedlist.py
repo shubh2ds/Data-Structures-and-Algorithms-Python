@@ -54,8 +54,31 @@ def insert_in_last2(k,head):
         curr=curr.next    
     curr.next=Node(k)
     return head
-
+def insert_at_pos1(pos,data,head):
+    tmp=Node(data)
+    curr=head
+    idx=1
+    while idx+1!=pos:
+        print("idx:",idx)
+        curr=curr.next
+        idx=idx+1
+    tmp.next=curr.next   
+    curr.next=tmp
+    return head
+def insert_at_pos2(pos,data,head):
+    tmp=Node(data)
+    curr=head   
+    for i in range(pos-2):
+        curr=curr.next
+    tmp.next=curr.next
+    curr.next=tmp
+    return head
+    
+        
 k=100
 #new_list=insert_in_begining2(k,head)
-new_list=insert_in_last2(k,head)
+#new_list=insert_in_last2(k,head)
+pos=3
+data=500
+new_list=insert_at_pos2(pos,data,head)
 print_Linkedlist(new_list)
