@@ -17,7 +17,7 @@ def print_Linkedlist(head):
        curr=curr.next
 #print_Linkedlist(head)
 
-def insert_in_begining(k,head):
+def insert_in_begining1(k,head):
     if head is None:
         head=Node(k)
         return head
@@ -25,6 +25,11 @@ def insert_in_begining(k,head):
     head=Node(k)
     head.next=tmp
     return head
+def insert_in_begining2(k,head):
+    tmp=Node(k)
+    tmp.next=head
+    return tmp
 k=100
-head=insert_in_begining(k,head)
-print_Linkedlist(head)
+new_list=insert_in_begining2(k,head)
+
+print_Linkedlist(new_list)
