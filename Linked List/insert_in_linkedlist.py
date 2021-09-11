@@ -29,7 +29,33 @@ def insert_in_begining2(k,head):
     tmp=Node(k)
     tmp.next=head
     return tmp
-k=100
-new_list=insert_in_begining2(k,head)
 
+def insert_in_last(k,head):
+    if head==None:
+        return Node(k)
+    tmp=Node(k)
+    curr=head
+    while curr.next!=None:
+        #if curr.next==None: #loop would never hit this line.
+        #    curr.next=Node(k)
+        curr=curr.next
+        if curr.next==None: 
+            curr.next=Node(k)
+            return head
+    #curr.next=Node(k)
+    return head
+
+def insert_in_last2(k,head):
+    if head==None:
+        return Node(k)
+    tmp=Node(k)
+    curr=head
+    while curr.next!=None:
+        curr=curr.next    
+    curr.next=Node(k)
+    return head
+
+k=100
+#new_list=insert_in_begining2(k,head)
+new_list=insert_in_last2(k,head)
 print_Linkedlist(new_list)
