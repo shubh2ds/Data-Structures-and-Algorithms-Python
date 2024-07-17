@@ -1,6 +1,6 @@
 class BinaryTreeNode:
     def __init__(self,data):
-        self.root = data
+        self.data = data
         self.left = None
         self.right = None
 
@@ -11,6 +11,6 @@ btn3 = BinaryTreeNode(3)
 btn1.left = btn2
 btn1.right = btn3
 
-print("root:",btn1.root)
-print("root-left:",btn1.left.root)
-print("root-right:",btn1.right.root)
+print("data:",btn1.data)
+print("left:",btn1.left.root)
+print("right:",btn1.right.root)
