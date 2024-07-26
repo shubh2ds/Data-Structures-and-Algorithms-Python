@@ -44,3 +44,26 @@ printTreeDetailed(root)
 root = removeLeafNode(root)
 print("Tree after removing leaves:")
 printTreeDetailed(root)
+
+"""
+Enter node value:1
+Enter node value:2
+Enter node value:11
+Enter node value:-1
+Enter node value:-1
+Enter node value:3
+Enter node value:-1
+Enter node value:-1
+Enter node value:4
+Enter node value:-1
+Enter node value:-1
+Tree:
+1:2 , 4
+2:11 , 3
+11:
+3:
+4:
+Tree after removing leaves:
+1:2 ,
+2:
+"""
