@@ -17,6 +17,13 @@ class Graph:
             self.adj_list[V2].append(V1)
             return True
         return False
+    def remove_edges(self,V1,V2):
+        if V1 in self.adj_list.keys() and V2 in self.adj_list.keys():
+            self.adj_list[V1].remove(V2)
+            self.adj_list[V2].remove(V1)
+            return True
+        return False
+
 
 
 obj = Graph()
@@ -34,7 +41,9 @@ obj.add_edge('D','E')
 obj.add_edge('E','A')
 print("Edges Connected!")
 obj.print_graph()
-
+print("Removing Edge:",'E','A')
+obj.remove_edges('E','A')
+obj.print_graph()
 
 
     
