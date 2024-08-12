@@ -23,6 +23,18 @@ class Graph:
             self.adj_list[V2].remove(V1)
             return True
         return False
+    def remove_vertex(self,V):
+        if V in self.adj_list.keys():
+            for connected_vertex in self.adj_list[V]:
+                
+                    self.adj_list[connected_vertex].remove(V)
+            del self.adj_list[V]
+            return True
+        
+        return False
+               
+
+
 
 
 
@@ -41,9 +53,13 @@ obj.add_edge('D','E')
 obj.add_edge('E','A')
 print("Edges Connected!")
 obj.print_graph()
-print("Removing Edge:",'E','A')
-obj.remove_edges('E','A')
+#print("Removing Edge:",'E','A')
+#obj.remove_edges('E','A')
+
+print("Removing Vertex:",'E')
+obj.remove_vertex('E')
 obj.print_graph()
+
 
 
     
