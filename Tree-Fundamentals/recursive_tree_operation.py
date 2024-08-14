@@ -55,6 +55,44 @@ class BST:
         if self.root == None:
             self.root = Node(value)
         self.__insert_recursive(self.root, value)
+    
+    def min_value(self, current_node):
+        if current_node == None:
+            return None
+        while current_node.left != None:
+            current_node = current_node.left
+        return current_node.value
+
+    def __delete(self, current_node, value):
+        if current_node == None:
+            return None
+        if current_node.value > value:
+            current_node.left = self.__delete(current_node.left, value)
+
+        elif current_node.value <value:
+            current_node.right = self.__delete(current_node.right, value)
+
+        else:
+            if current_node.left == None and current_node.right == None:
+                return None
+            if current_node.left == None:
+                current_node = current_node.right
+
+            if current_node.right == None:
+                current_node = current_node.left
+
+            else:
+                min_value_subtree = self.min_value(current_node.right)
+                current_node.value = min_value_subtree
+                current_node.right = self.__delete(current_node.right, min_value_subtree)
+
+        return current_node
+
+    def delete(self, value):
+        if self.root == None:
+            return None
+        else:
+            self.__delete(self.root, value)
 
 tree = BST()
 tree.insert(5)
@@ -63,4 +101,7 @@ tree.insert(7)
 print(tree.root.value)
 print(tree.root.left.value)
 print(tree.root.right.value)
-print(tree.search(7))
+print("search:",tree.search(7))
+#tree.delete(7)
+#print("search after delete:",tree.search(7))
+print(tree.min_value(tree.root))
