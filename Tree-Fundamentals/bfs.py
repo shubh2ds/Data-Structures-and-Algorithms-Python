@@ -78,7 +78,7 @@ class BST:
         return results
     
     def dfs_postorder(self):
-        results = [] # root -> left complete till none -> then right
+        results = [] # left complete till none -> then right -> then root
         def trav(current):
             
             if current.left !=None:#left
@@ -87,6 +87,22 @@ class BST:
                 trav(current.right)
        
             results.append(current.value)#root    
+        trav(self.root)
+        return results
+    
+    def dfs_inorder(self):
+        results = [] # left complete till none -> root -> then right
+        def trav(current):
+            
+            if current.left !=None:#left
+                trav(current.left)
+
+            results.append(current.value)#root    
+
+            if current.right !=None: #right
+                trav(current.right)
+       
+            
         trav(self.root)
         return results
     
@@ -114,3 +130,7 @@ print(tree.dfs_preorder())
 #OP: [47, 21, 18, 27, 76, 52, 82]
 
 print(tree.dfs_postorder())
+#OP: [18, 27, 21, 52, 82, 76, 47]
+
+print(tree.dfs_inorder())
+#OP: [18, 21, 27, 47, 52, 76, 82]
