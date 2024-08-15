@@ -66,7 +66,7 @@ class BST:
                 queue.append(current.right)
         return results
     def dfs_preorder(self):
-        results = [] # root -> left -> right
+        results = [] # root -> left complete till none -> then right
         def trav(current):
             results.append(current.value)#root
             if current.left !=None:#left
@@ -74,6 +74,19 @@ class BST:
             if current.right !=None: #right
                 trav(current.right)
             
+        trav(self.root)
+        return results
+    
+    def dfs_postorder(self):
+        results = [] # root -> left complete till none -> then right
+        def trav(current):
+            
+            if current.left !=None:#left
+                trav(current.left)
+            if current.right !=None: #right
+                trav(current.right)
+       
+            results.append(current.value)#root    
         trav(self.root)
         return results
     
@@ -100,3 +113,4 @@ print(tree.root.right.value)
 print(tree.dfs_preorder())
 #OP: [47, 21, 18, 27, 76, 52, 82]
 
+print(tree.dfs_postorder())
