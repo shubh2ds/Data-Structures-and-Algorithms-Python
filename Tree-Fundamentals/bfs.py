@@ -51,20 +51,7 @@ class BST:
             return None
         self.__delete(self.root , value) 
 
-    def dfs1(self):
-        if self.root == None:
-            return None
-        queue = []
-        results = []
-        queue.append(self.root.value)
-        while len(queue) != 0:
-            current = queue.pop(0) 
-            results.append(current.value)
-            if current.left != None:
-                queue.append(current.left)
-            if current.right != None:
-                queue.append(current.right)
-        return results
+    
     def dfs_preorder(self):
         results = [] # root -> left complete till none -> then right
         def trav(current):
@@ -101,12 +88,25 @@ class BST:
 
             if current.right !=None: #right
                 trav(current.right)
-       
-            
+      
         trav(self.root)
         return results
     
-
+    def bfs1(self):
+        if self.root == None:
+            return None
+        queue = []
+        results = []
+        queue.append(self.root)
+        while len(queue) != 0:
+            current = queue.pop(0) 
+            results.append(current.value)
+            if current.left != None:
+                queue.append(current.left)
+            if current.right != None:
+                queue.append(current.right)
+        return results
+    
 tree = BST()
 tree.insert(47)     
 tree.insert(21)      
@@ -134,3 +134,5 @@ print(tree.dfs_postorder())
 
 print(tree.dfs_inorder())
 #OP: [18, 21, 27, 47, 52, 76, 82]
+
+print(tree.bfs1())
