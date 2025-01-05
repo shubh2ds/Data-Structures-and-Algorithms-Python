@@ -136,3 +136,4 @@ print(tree.dfs_inorder())
 #OP: [18, 21, 27, 47, 52, 76, 82]
 
 print(tree.bfs1())
+#OP: [47, 21, 76, 18, 27, 52, 82]

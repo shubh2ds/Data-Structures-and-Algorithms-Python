@@ -30,7 +30,6 @@ class LinkedList:
             self.tail = new_node
         self.length += 1
 
-
     def prepend(self,value):
         new_node = Node(value)
         if self.length == 0:
@@ -41,6 +40,7 @@ class LinkedList:
             self.head = new_node
             new_node.next = tmp
         self.length += 1
+
     def pop_first(self):
         if self.length == 0 :
             return None
@@ -52,6 +52,7 @@ class LinkedList:
             if self.length == 0:
                 self.tail = None
             return tmp.value
+        
     def pop(self):
         if self.length == 0 :
             return False
@@ -69,14 +70,14 @@ class LinkedList:
         self.length -= 1
         return True
         
-
     def get(self,index):
         if index<0 or index >= self.length:
-            return None
-        tmp = self.head
+            return None 
+        tmp = self.head 
         for _ in range(0,index):
             tmp = tmp.next
         return tmp.value
+    
     def set(self,index,value):
         if index<0 or index >= self.length:
             return False
@@ -100,6 +101,7 @@ class LinkedList:
         new_node.next = tmp.next
         tmp.next = new_node
         return True
+    
     def remove(self,index):
         if index < 0 or index >= self.length:
             return False
@@ -120,7 +122,6 @@ class LinkedList:
         while tmp is not None:
             print(tmp.value)
             tmp = tmp.next
-
 
 linked_list = LinkedList(4)
 #linked_list = LinkedList(5)

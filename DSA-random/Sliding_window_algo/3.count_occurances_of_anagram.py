@@ -1,0 +1,2 @@
+s = "forxsorfxdofr"
+a ="for"
